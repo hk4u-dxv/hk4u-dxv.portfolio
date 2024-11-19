@@ -1,0 +1,50 @@
+---
+import { Button } from "@components/ui";
+import Logo from "@components/ui/Logo.astro";
+import { Image } from "astro:assets";
+import TIlogo from "@assets/svgs/ti.w.svg";
+
+const navItems = [
+  { label: "Inicio", href: "/" },
+  { label: "Proyectos", href: "#projects" },
+  { label: "Sobre mí", href: "#about" },
+  { label: "Contacto", href: "#contact" },
+];
+---
+
+<header
+  class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-dark-950/80 border-b border-white/10"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <Logo />
+
+      <!-- Navigation -->
+      <nav class="hidden md:flex items-center gap-6">
+        {
+          navItems.map(({ label, href }) => (
+            <a
+              href={href}
+              class="text-sm text-gray-300 hover:text-white transition-colors"
+            >
+              {label}
+            </a>
+          ))
+        }
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="flex items-center gap-10">
+
+        <!-- TI logo -->
+        <Image
+          src={TIlogo}
+          class="w-10 h-10 hover:scale-110 transition-transform"
+          alt="TI Logo"
+        />
+      </div>
+    </div>
+  </div>
+</header>
+

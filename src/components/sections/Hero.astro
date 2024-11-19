@@ -1,0 +1,62 @@
+---
+import { Button, Badge, GradientText } from "@components/ui";
+---
+
+<section class="relative min-h-screen pt-40 pb-32">
+  <div class="max-w-4xl mx-auto text-center px-4">
+    <!-- Badge 
+    <div class="flex justify-center mb-8 animate-fade-up">
+      <Badge variant="success">
+        <span class="inline-block w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+        Available for work
+      </Badge>
+    </div>
+    
+    <!-- Título Principal -->
+    <h1 class="text-6xl lg:text-7xl font-bold leading-tight mb-8">
+      <GradientText class="animate-fade-up">Full Stack</GradientText><br/>
+      <span class="text-white animate-fade-up animate-delay-100">Developer &</span><br/>
+      <span class="text-purple-400 animate-fade-up animate-delay-200">Designer</span>
+    </h1>
+
+    <!-- Descripción -->
+    <p class="text-gray-300 text-xl mx-auto max-w-2xl animate-fade-up animate-delay-300 leading-relaxed mb-12">
+      Transformando ideas en experiencias digitales excepcionales. 
+      Especializado en desarrollo web moderno y diseño de interfaces.
+    </p>
+
+    <!-- Botones de Acción -->
+    <div class="flex justify-center gap-4 animate-fade-up animate-delay-400 mb-16">
+      <Button variant="primary" href="#projects">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+        Ver Proyectos
+      </Button>
+      <Button variant="secondary" href="#contact">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        Contactar
+      </Button>
+    </div>
+
+    <!-- Estadísticas -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto pt-8 border-t border-purple-500/10">
+      {[
+        { number: "5+", text: "Años de Experiencia" },
+        { number: "50+", text: "Proyectos Completados" },
+        { number: "20+", text: "Clientes Satisfechos" }
+      ].map(stat => (
+        <div class="group hover:bg-white/5 p-4 rounded-xl transition-colors">
+          <h3 class="text-3xl font-bold text-white group-hover:text-purple-400 transition-colors">
+            {stat.number}
+          </h3>
+          <p class="text-gray-400 group-hover:text-gray-300 transition-colors">
+            {stat.text}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section> 

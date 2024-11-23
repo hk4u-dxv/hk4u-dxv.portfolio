@@ -32,51 +32,56 @@ const socialLinks = [
 ];
 ---
 
-<footer class="bg-dark-950/50 backdrop-blur-md border-t border-white/10">
+<footer 
+  class="bg-dark-950/50 backdrop-blur-md border-t border-white/10 animate-fade-in duration-700"
+  aria-label="Pie de página"
+>
   <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <!-- Logo y descripción -->
-      <div class="space-y-4">
+      <div class="space-y-4 animate-fade-in-up">
         <Logo class="hover:opacity-80 transition-opacity" />
         <p class="text-gray-400 text-sm leading-relaxed">
-          Desarrollador Full Stack especializado en crear experiencias digitales
-          excepcionales.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
         </p>
       </div>
 
       <!-- Links rápidos -->
-      <div class="space-y-4">
-        <h3 class="text-sm font-semibold text-white tracking-wider uppercase">
+      <nav 
+        class="space-y-4 animate-fade-in-up delay-100"
+        aria-label="Links rápidos"
+      >
+        <h2 class="text-sm font-semibold text-white tracking-wider uppercase">
           Links Rápidos
-        </h3>
-        <ul class="space-y-3">
+        </h2>
+        <ul class="space-y-3" role="list">
           {
             quickLinks.map(({ name, href }) => (
               <li>
                 <a
                   href={href}
-                  class="text-gray-400 hover:text-white transition-colors duration-200 flex items-center gap-2"
+                  class="text-gray-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group"
                 >
-                  <span class="h-1 w-1 rounded-full bg-gray-400"></span>
+                  <span class="h-1 w-1 rounded-full bg-gray-400 group-hover:bg-white transition-colors"></span>
                   {name}
                 </a>
               </li>
             ))
           }
         </ul>
-      </div>
+      </nav>
 
       <!-- Redes sociales -->
-      <div class="space-y-4">
-        <h3 class="text-sm font-semibold text-white tracking-wider uppercase">
+      <div class="space-y-4 animate-fade-in-up delay-200">
+        <h2 class="text-sm font-semibold text-white tracking-wider uppercase">
           Sígueme
-        </h3>
+        </h2>
         <div class="flex space-x-6">
           {
             socialLinks.map(({ name, url, icon }) => (
               <a
                 href={url}
-                class="text-gray-400 hover:text-white transition-colors duration-200"
+                class="text-gray-400 hover:text-white transition-colors duration-200 hover:scale-110"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Visitar ${name}`}
@@ -89,6 +94,5 @@ const socialLinks = [
       </div>
     </div>
 
-    
   </div>
 </footer>

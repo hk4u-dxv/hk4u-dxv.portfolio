@@ -1,0 +1,69 @@
+---
+import Logo from "./Logo.astro";
+import { Image } from "astro:assets";
+import TIlogo from "@assets/svgs/ti.w.svg";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+
+const navItems = [
+  { label: "Inicio", href: "/" },
+  { label: "Proyectos", href: "#projects" },
+  { label: "Sobre mí", href: "#about" },
+  { label: "Contacto", href: "#contact" },
+];
+---
+
+<nav 
+  class:list={["flex items-center w-full", className]} 
+  aria-label="Navegación principal"
+>
+  <!-- Logo izquierda -->
+  <div class="flex-none animate-fade-in duration-500">
+    <Logo class="hover:scale-105 transition-transform" />
+  </div>
+
+  <!-- Navigation Links (centrados) -->
+  <div class="flex-1 flex items-center justify-center">
+    <div class="flex items-center gap-8">
+      {
+        navItems.map(({ label, href }, index) => (
+          <a
+            href={href}
+            class="text-sm text-gray-300 hover:text-white transition-colors relative group animate-fade-in"
+            style={`animation-delay: ${150 + index * 100}ms`}
+            aria-current={href === "/" ? (Astro.url.pathname === href ? "page" : undefined) : undefined}
+          >
+            <span class="relative py-2">
+              {label}
+              <span
+                class:list={[
+                  "absolute -bottom-1 left-0 w-0 h-0.5",
+                  "bg-gradient-to-r from-purple-500 to-purple-300",
+                  "transition-all duration-300 ease-out opacity-0",
+                  "group-hover:w-full group-hover:opacity-100",
+                  href === "/" && Astro.url.pathname === href ? "w-full opacity-100" : ""
+                ]}
+                aria-hidden="true"
+              />
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Logo TI  -->
+  <div class="flex-none animate-fade-in duration-700">
+    <Image
+      src={TIlogo}
+      class="w-10 h-10 hover:scale-110 transition-transform duration-500"
+      alt="TI Logo"
+      width={40}
+      height={40}
+    />
+  </div>
+</nav>
